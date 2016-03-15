@@ -743,4 +743,66 @@ https://github.com/hiloki/flocss
 （インクルードしたファイルでもルート相対パスであれば問題なく表示される）
 
 
+##命名規則の共通ルール
+HTMLファイル、CSSファイル（idセレクタ/classセレクタを含む）、画像ファイル、ディレクトリ名 共通のルール<br>
+
+###英数字のみを使用する
+理由：開く環境によっては、文字化けする可能性があるため
+
+###機種依存文字の使用禁止
+理由：記号と同様、エラーを引き起こす原因と成り得るため
+
+###必ずアルファベットからはじめ、数字からはじめてはいけない
+理由：数字から開始しているid・class名は、認識されないため
+
+###全角スペース、半角スペース（Space）の使用禁止
+理由：ファイル名にスペースを含んだ場合、ファイルを正常に処理出来なくなる可能性があるため<br>
+（id・class名の場合、スペースを含んでしまうと別なid・classとして認識されてしまいます。）
+
+###「\」,「/」,「:」,「?」,「<」,「>」,「|」,「＄」これらの文字の使用禁止
+理由：Windowsでファイル名に使用することが出来ないため<br>
+また、上記に含まれないその他の記号についても、プログラム上で誤った処理をしてしまい、エラーを引き起こす原因と成り得る
+
+###意味が分からなくなるほどの省略は避ける
+理由：作成した本人しかわからない状況をさけるため
+
+
+##参考文献
+メンテナブルCSS<br>
+https://www.cyberagent.co.jp/techinfo/techreport/report/id=7926
+<br>
+
+Harry Roberts氏によるCSSガイドライン<br>
+https://github.com/kiwanami/CSS-Guidelines
+<br>
+
+「Google HTML/CSS Style Guide」を適当に和訳してみた
+http://re-dzine.net/2012/05/google-htmlcss-style-guide/
+<br>
+
+HTML5日本語訳<br>
+http://momdo.github.io/html5/Overview.html
+<br>
+
+foundation-start-kit<br>
+https://github.com/funteractive/foundation-start-kit
+<br>
+
+web-starter-kit<br>
+https://github.com/google/web-starter-kit
+<br>
+
+新人コーダーに知っておいて欲しい命名規則の考え方[画像・ID・class名]<br>
+http://html-coding.co.jp/knowhow/tips/naming-rule/
+<br>
+
+Jade<br>
+https://gist.github.com/japboy/5402844
+<br>
+
+Jade変換ツール<br>
+http://jade-lang.com/
+<br>
+
+
 
