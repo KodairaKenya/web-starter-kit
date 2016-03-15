@@ -94,50 +94,50 @@ EditorConfigパッケージをエディタに導入することで、.editorconf
 
 ##<a name="directory">ディレクトリ構成</a>
 ```
-/ <br>
-├── app  <br>
-│   ├── img <br>
-│   │   ├── common <br>
-│   │   └── top <br>
-│   ├── jade <br>
-│   │   ├── foundation <br>
-│   │   │   ├── _base.jade <br>
-│   │   │   └── _mixin.jade <br>
-│   │   ├── layout <br>
-│   │   │   ├── _footer.jade <br>
-│   │   │   └── _header.jade <br>
-│   │   ├── object <br>
-│   │   └── index.jade <br>
-│   │   └── meta.json <br>
-│   ├── js <br>
-│   │   ├── lib <br>
-│   │   │   ├── jquery.js <br>
-│   │   └── common.js <br>
-│   └── sass <br>
-│       ├── foundation <br>
-│       │   ├── _base.scss <br>
-│       │   ├── _inc.scss <br>
-│       │   ├── _mixin.scss <br>
-│       │   ├── _sanitize.scss <br>
-│       │   └── _vars.scss <br>
-│       ├── layout <br>
-│       │   ├── _footer.scss <br>
-│       │   ├── _header.scss <br>
-│       │   └── _layout.scss <br>
-│       ├── object <br>
-│       │   ├── component <br>
-│       │   │   ├── _btn.scss <br>
-│       │   │   ├── _grid.scss <br>
-│       │   │   ├── _media.scss <br>
-│       │   │   └── _title.scss <br>
-│       │   ├── project <br>
-│       │   └── utility <br>
-│       └── common.scss <br>
-├── .gitignore <br>
-├── README.md <br>
-├── package.json <br>
-├── gulpfile.js <br>
-└── .editorconfig <br>
+/
+├── app
+│   ├── img
+│   │   ├── common
+│   │   └── top
+│   ├── jade
+│   │   ├── foundation
+│   │   │   ├── _base.jade
+│   │   │   └── _mixin.jade
+│   │   ├── layout
+│   │   │   ├── _footer.jade
+│   │   │   └── _header.jade
+│   │   ├── object
+│   │   └── index.jade
+│   │   └── meta.json
+│   ├── js
+│   │   ├── lib
+│   │   │   ├── jquery.js
+│   │   └── common.js
+│   └── sass
+│       ├── foundation
+│       │   ├── _base.scss
+│       │   ├── _inc.scss
+│       │   ├── _mixin.scss
+│       │   ├── _sanitize.scss
+│       │   └── _vars.scss
+│       ├── layout
+│       │   ├── _footer.scss
+│       │   ├── _header.scss
+│       │   └── _layout.scss
+│       ├── object
+│       │   ├── component
+│       │   │   ├── _btn.scss
+│       │   │   ├── _grid.scss
+│       │   │   ├── _media.scss
+│       │   │   └── _title.scss
+│       │   ├── project
+│       │   └── utility
+│       └── common.scss
+├── .gitignore
+├── README.md
+├── package.json
+├── gulpfile.js
+└── .editorconfig
 
 ```
 
@@ -200,7 +200,7 @@ div {
 
 ###2. 基本のメタルール
 ####2-1. エンコーディング
-`meta charset=”utf-8″``とエンコーディングを明記<br>
+`meta charset=”utf-8″`とエンコーディングを明記<br>
 <br><br>
 理由：文字エンコーディングを指定しないと、日本語で作成されたウェブページに英語版のブラウザでアクセスした場合などに文字化けが起きることがある<br>
 
