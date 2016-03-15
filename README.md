@@ -9,6 +9,7 @@
 ###6. [ディレクトリ構成](#directory)
 ###7. [Gulp](#gulp)
 ###8 .[HTML](#html)
+###9 .[HTML](#css)
 
 ##<a name="start">始める前に</a>
 ###対象
@@ -160,7 +161,9 @@ EditorConfigパッケージをエディタに導入することで、.editorconf
 <!-- OK -->
 <script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
 ```
+
 <br><br><br>
+
 ```css
 /* NG */
 div {
@@ -349,4 +352,300 @@ CSSとJavaScriptのtype属性は省略
 理由：JavaScriptはHTMLの中で使用するのが想定されるため、HTMLはダブルクオーテーション("")でJavaScriptはシングルクオーテーション('')を使用するのを推奨している <br>
 参考:
 http://qiita.com/niusounds/items/f21a28e862a68a098ea7
+
+
+##<a name="css">CSS</a>
+###CSSスタイルルール
+####IDとclassの命名
+IDとクラス名にはちゃんと意味の分かる名前を使うこと。<br>
+見た目を反映したものやそれが何を表しているか不可解な名前ではなく、要素の目的や役割を反映した名前を付ける。<br>
+
+```css
+/* NG: クラス名だけだと把握できない */
+.table01 {}
+
+/* NG: 見た目を表してる */
+.btn-green {}
+
+/* OK */
+.btn-primary {}
+
+/* OK: 役割を表してる */
+.gallery {}
+.login {}
+.video {}
+```
+
+<br>
+理由：制作した当事者以外が把握できるようにするため、修正に耐えやすいため<br>
+（例えば緑のボタンを.btn-greenと命名した場合、後にデザインの変更があり緑から赤になると命名が適切ではないので.btn-greenを.btn-redに書き換える処理が発生する。それを最初から.btn-primaryや.btn-keyColorにすることで無駄な作業を減らすことができる）
+
+####IDとクラスの命名スタイル
+意味の分かる範囲でできるだけ短いIDとクラス名を使う。<br>
+短くしすぎて意味がわからなくなるようなのはNG。<br>
+<br>
+
+```css
+/* NG */
+#navigation {}
+.atr {}
+
+/* OK */
+#nav {}
+.author {}
+```
+
+<br>
+理由：ファイルサイズ節約のため<br>
+意味が分からないほどに省略してしまっては、制作した本人しか認識できないため<br>
+
+####ID
+IDは原則使用せずクラスで対応する<br>
+ページ内リンクで使用する場合は例外とする<br>
+<br>
+理由：再利用性が低下するため<br>
+詳細度が高くなり管理しづらいため<br>
+
+####タイプセレクタの記述
+IDとクラス名にタイプセレクタは記述しない。<br>
+<br>
+
+```html
+/* NG */
+ul.example {}
+div.error {}
+
+/* OK */
+.example {}
+.error {}
+```
+
+<br>
+理由：限定された要素以外に適用できなくなり、再利用性が低下するため<br>
+また、マークアップが変更になった場合、CSSに影響が出ることを避けるため<br>
+
+####ショートハンドプロパティ
+ショートハンドを適宜使用する<br>
+<br>
+
+```css
+/* NG */
+padding-bottom: 2em;
+padding-left: 1em;
+padding-right: 1em;
+padding-top: 0;
+
+/* OK */
+padding: 0 1em 2em;
+```
+
+####「0」と単位
+値が「0」なら単位を省略する。<br>
+<br>
+
+```css
+margin: 0;
+padding: 0;
+
+```
+
+<br>
+理由：ファイルサイズ節約のため。<br>
+
+####小数点の頭の「0」
+小数点の頭の「0」は省略する。<br>
+<br>
+
+```css
+font-size: .8em;
+```
+
+<br>
+理由：ファイルサイズ節約のため。<br>
+
+####URI値の引用符
+url()での指定において、""（ダブルコーテーション）や''（シングルコーテーション）などのURI値の引用符を省略すること。<br>
+<br>
+
+```css
+@import url(//www.google.com/css/go.css);
+```
+
+####カラーコード
+カラーコードで3文字で表記できるものは3文字にする。<br>
+<br>
+
+```css
+/* NG */
+color: #ffffff;
+
+/* OK */
+color: #fff;
+```
+
+<br>
+理由：ファイルサイズ節約のため。<br>
+
+
+####CSSハック
+ユーザーエージェント別の対応のためにCSSハックを使う前に別の方法を試してみること。<br>
+CSSハックは、ユーザーエージェントごとの違いを吸収するためには簡単で魅力的な方法だけど、プロジェクト全体のコードの品質を落とすことにもなるので「最後の手段」として考えること。<br>
+
+
+####CSS書式ルール
+ブロック単位のインデント<br>
+その階層がわかるようにブロック単位でコードをインデントする。<br>
+<br>
+
+```css
+@media screen {
+  html {
+    background: #fff;
+    color: #444;
+  }
+}
+```
+
+<br>
+理由：可読性向上のため<br>
+
+
+####プロパティの終端
+すべてのプロパティの終端はセミコロンを書くこと。<br>
+<br>
+
+```css
+/* NG */
+.test {
+    display: block;
+    height: 100px
+}
+
+/* OK */
+.test {
+    display: block;
+    height: 100px;
+}
+```
+
+<br>
+理由：可読性向上のため<br>
+
+
+####プロパティ名の終端
+すべてのプロパティ名の終端にはコロンの後にスペースを入れること。<br>
+<br>
+
+```css
+/* NG */
+h3 {
+    font-weight:bold;
+}
+
+/* OK */
+h3 {
+    font-weight: bold;
+}
+```
+
+<br>
+理由：可読性向上のため<br>
+
+####セレクタの終端
+
+"{"の位置は、セレクタと同じ行に記述する<br>
+セレクタとの間にはスペースをいれること<br>
+<br>
+
+```css
+/* NG */
+.sample
+{
+　color: #399;
+}
+
+/* NG */
+.sample{
+　color: #399;
+}
+
+/* OK */
+.sample {
+　color: #399;
+}
+```
+
+<br>
+理由：可読性向上のため<br>
+
+####セレクタとプロパティの分離
+
+別々のセレクタとプロパティは改行して書くこと。<br>
+<br>
+
+```css
+/* NG */
+a:focus, a:active {
+    position: relative; top: 1px;
+}
+
+/* OK */
+h1,
+h2,
+h3 {
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+```
+
+<br>
+理由：可読性向上のため<br>
+
+
+####CSSルールの分離
+別々のCSSルールは改行して一行間を空けて書く。<br>
+<br>
+
+```css
+html {
+    background: #fff;
+}
+
+body {
+    margin: auto;
+    width: 50%;
+}
+```
+
+<br>
+理由：可読性向上のため<br>
+
+####コメント
+
+必要に応じてコードを説明する<br>
+コードにTODOを入れ、何のためのものか誰が入れたのかをコメントとして記述する<br>
+<br>
+
+```css
+/* TODO: remove optional tags */
+```
+
+<br>
+理由：当事者以外が把握しやすくするため<br>
+
+
+###CSS設計
+####下記の書籍を理解していることを前提とする
+**CSSの教科書**<br>
+http://goo.gl/MspHyM
+<br>
+**CSS設計手法**<br>
+CSS設計はFLOCSSを使用する<br>
+https://github.com/hiloki/flocss
+<br>
+
+
+
+
 
