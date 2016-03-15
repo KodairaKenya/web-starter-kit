@@ -646,6 +646,48 @@ https://github.com/hiloki/flocss
 <br>
 
 
+##<a name="git">Git</a>
+###コミットメッセージの規約
+####原則
+<ul>
+    <li>1行目にコミットの全体的説明(タイトル)を 50 字以内で記述</li>
+    <li>2行目は空白行</li>
+    <li>3行目以降に変更内容の詳細(何をなぜ)を記述する</li>
+</ul>
 
+####1行目の記述フォーマット
+<ul>
+    <li>Fix：バグ修正</li>
+    <li>Add：新規機能（ファイル）追加</li>
+    <li>Change：仕様変更</li>
+    <li>Remove：削除（ファイル）</li>
+</ul>
+
+#####日本語の例
+<ul>
+    <li>日本語は複雑な表現が多いので、文頭に英語の表記を含める</li>
+    <li>【Fix】Aboutページのフッターリンクを修正</li>
+    <li>【Add】ユーザー数を取得する関数を追加</li>
+</ul>
+
+#####マークアップの例
+<ul>
+    <li>【**】ページ名 / 説明 の形にする</li>
+    <li>【Fix】about / フッターリンクを修正</li>
+    <li>【Add】contact / 住所の欄を追加</li>
+</ul>
+
+###.gitignore
+基本的にgulpで処理した後のファイルはgitで管理しない<br>
+下記のファイルはアップしないようにする<br>
+<br>
+
+```
+.gitignore
+/.DS_Store
+/node_modules
+/build
+/npm-debug.log
+```
 
 
