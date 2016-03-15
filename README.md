@@ -264,7 +264,8 @@ The currency symbol for the Euro is “€”.
 ```
 
 <br><br>
-理由：http://www.marguerite.jp/Nihongo/WWW/Introduction/HTML5/Entity.html <br>
+理由：
+http://www.marguerite.jp/Nihongo/WWW/Introduction/HTML5/Entity.html
 
 
 ####3-6. マルチメディアの設定
@@ -281,7 +282,8 @@ alt属性でアクシビリティー向上のために画像が何を意味し�
 
 <br><br>
 理由：画像に対して代替として動作するテキストをユーザーに提供できる <br>
-参考：http://momdo.github.io/html5/embedded-content-0.html#alt <br>
+参考：
+http://momdo.github.io/html5/embedded-content-0.html#alt <br>
 
 
 ####3-7. type属性
@@ -345,4 +347,6 @@ CSSとJavaScriptのtype属性は省略
 
 <br><br>
 理由：JavaScriptはHTMLの中で使用するのが想定されるため、HTMLはダブルクオーテーション("")でJavaScriptはシングルクオーテーション('')を使用するのを推奨している <br>
-参考http://qiita.com/niusounds/items/f21a28e862a68a098ea7
+参考:
+http://qiita.com/niusounds/items/f21a28e862a68a098ea7
+
