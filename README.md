@@ -9,7 +9,8 @@
 ###6. [ディレクトリ構成](#directory)
 ###7. [Gulp](#gulp)
 ###8 .[HTML](#html)
-###9 .[HTML](#css)
+###9 .[CSS](#css)
+###10 .[Git](#git)
 
 ##<a name="start">始める前に</a>
 ###対象
@@ -92,6 +93,7 @@ EditorConfigパッケージをエディタに導入することで、.editorconf
 
 
 ##<a name="directory">ディレクトリ構成</a>
+```
 / <br>
 ├── app  <br>
 │   ├── img <br>
@@ -137,7 +139,7 @@ EditorConfigパッケージをエディタに導入することで、.editorconf
 ├── gulpfile.js <br>
 └── .editorconfig <br>
 
-
+```
 
 ##<a name="gulp">Gulp</a>
 <ul>
@@ -689,5 +691,56 @@ https://github.com/hiloki/flocss
 /build
 /npm-debug.log
 ```
+
+##画像
+
+###画像における命名規則は、「種類」と「詳細」をアンダーバーでつなげます　これを基本形とします
+**種類_詳細.拡張子**<br>
+<br>
+
+###デバイスごとに画像を別にする場合、デバイスを追加します
+**種類_詳細_番号_デバイス.拡張子**<br>
+<br>
+
+###種類を6つに分類
+**bg: 背景**<br>
+**btn: ボタン**<br>
+**icon: アイコン**<br>
+**txt: テキスト**<br>
+**ttl: タイトル**<br>
+**img: 画像**<br>
+
+###詳細
+種類に対して詳細な説明をします<br>
+**icon_arrow.png**<br>
+<br>
+また、複数単語を使用したい場合はキャメルケースでつなげます<br>
+**icon_arrowPrev.png**<br>
+
+###番号
+同じ用途の画像が複数あった場合に、番号を付けてわけます<br>
+**icon_arrow_01.png**<br>
+
+###デバイス
+デバイスによって画像を切り替える場合、デバイスをつけてわけます<br>
+**icon_arrow_01_pc.png**<br>
+
+###画像のパス表記
+ルート相対パスを基本とする<br>
+<br>
+
+```html
+// NG
+<img src="../img/test.png">
+<img src="http://test.com/img/test.png">
+
+// OK
+<img src="/img/test.png">
+```
+
+<br>
+理由：どの階層にあっても同じパスで指定できるため<br>
+（インクルードしたファイルでもルート相対パスであれば問題なく表示される）
+
 
 
