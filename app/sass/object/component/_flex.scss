@@ -1,0 +1,12 @@
+// 参考：http://www.webcreatorbox.com/tech/flexbox/
+.c-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.c-flex__item {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}

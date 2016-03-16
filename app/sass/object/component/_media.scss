@@ -1,0 +1,51 @@
+.c-media:before,
+.c-media:after {
+  display: table;
+  content: "";
+}
+
+.c-media:after {
+  clear: both;
+}
+
+.c-media__image {
+  float: left;
+}
+
+.c-media__image > img {
+  display: block;
+}
+
+.c-media__body {
+  overflow: hidden;
+}
+
+
+/* 反転 */
+.c-media__image--rev {
+  float: right;
+}
+
+
+
+/* 画像に対する上下中央揃い */
+.c-media2 {
+  display: table;
+}
+
+.c-media2__image {
+  display: table-cell;
+}
+
+.c-media2__image > img {
+  display: block;
+}
+
+.c-media2__body {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.c-media2__body--middle {
+  vertical-align: middle;
+}
