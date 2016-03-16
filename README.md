@@ -142,12 +142,91 @@ EditorConfigパッケージをエディタに導入することで、.editorconf
 ```
 
 ##<a name="gulp">Gulp</a>
-<ul>
-  <li>プラグインや説明を記載</li>
-  <li>プラグインや説明を記載</li>
-  <li>プラグインや説明を記載</li>
-  <li>プラグインや説明を記載</li>
-</ul>
+###環境設定
+####【Gulp4.xにする際のコマンド】
+**アンインストール** <br>
+`npm uninstall -g gulp` (Macの場合は `sudo npm uninstall -g gulp` ) <br><br>
+
+**再インストール** <br>
+`npm install -g gulp-cli` (Macの場合 `sudo npm install -g gulp-cli` ) <br><br>
+
+**確認** <br>
+`gulp -v` <br>
+→CLI version 1.x <br><br>
+
+**【注意】** <br>
+`npm install -g gulp` であげてしまうと、CLI version 3.x になってしまう。<br>
+https://speakerdeck.com/jmblog/gulp-the-good-parts
+<br><br>
+
+###プラグイン
+####gulp
+gulpを使えるようにする(ver 4.x)<br>
+https://github.com/gulpjs/gulp/blob/4.0/docs/API.md
+
+####browser-sync
+ローカルサーバー起動 <br>
+https://www.browsersync.io/docs/gulp/
+
+####del
+ファイル削除 <br>
+https://www.npmjs.com/package/del
+
+####gulp-autoprefixer
+cssのプレフィックスを自動付与 <br>
+https://www.npmjs.com/package/gulp-autoprefixer
+
+####gulp-changed
+更新されたファイルのみを処理する <br>
+http://whiskers.nukos.kitchen/2014/12/13/gulp-changed.html
+
+####gulp-concat
+指定されたファイルの結合 <br>
+https://www.npmjs.com/package/gulp-concat
+
+####gulp-imagemin
+画像の圧縮 <br>
+https://www.npmjs.com/package/gulp-imagemin
+
+####gulp-jade
+jadeのコンパイル <br>
+https://www.npmjs.com/package/gulp-jade
+
+####gulp-load-plugins
+package.jsonに記載されたgulpプラグインを一括で読み込む <<br>
+https://www.npmjs.com/package/gulp-load-plugins
+
+####gulp-notify
+エラー発生時にデスクトップ通知を起動してくれる <br>
+http://whiskers.nukos.kitchen/2014/12/06/gulp-notify.html
+
+####gulp-size
+コマンドラインにファイルサイズを表示 <br>
+https://www.npmjs.com/package/gulp-size
+
+####gulp-pleeease
+cssの最適化をいろいろ行ってくれる <br>
+http://phiary.me/gulp-pleeease/
+
+####gulp-plumber
+処理中にエラーが起き、タスクが強制停止することを防いでくれる <br>
+http://whiskers.nukos.kitchen/2014/12/06/gulp-notify.html
+
+####gulp-sass
+Sassのコンパイル <br>
+https://www.npmjs.com/package/gulp-sass
+
+####gulp-sourcemap
+デバック時に変更前のファイルを保ってくれる <br>
+http://akabeko.me/blog/2014/12/browserify-2-source-map/
+
+####gulp-uglify
+min化 <br>
+https://www.npmjs.com/package/gulp-uglify
+
+####psi
+ページスピードを出力 <br>
+https://github.com/addyosmani/psi
 
 
 
