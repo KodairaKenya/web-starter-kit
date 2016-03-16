@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+//==== Media Queries Portrait ====
+// @include media-** {} で呼び出す
+
+//==== 変数 ====
+$media-max: 1001px;
+$media-middle: 1000px;
+$media-pc: 601px;
+$media-sp: 600px;
+
+//==== mixin ====
+@mixin media-max {
+  @media only screen and (min-width: $media-max ) {
+    @content;
+  }
+}
+
+@mixin media-middle {
+  @media only screen and (min-width:$media-pc) and ( max-width: $media-middle){
+    @content;
+  }
+}
+
+@mixin media-pc {
+  @media only screen and (min-width: $media-pc ) {
+    @content;
+  }
+}
+
+@mixin media-sp {
+  @media only screen and (max-width: $media-sp) {
+    @content;
+  }
+}

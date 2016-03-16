@@ -1,0 +1,90 @@
+@charset "UTF-8";
+//==== Font-Color ====
+$font-color: ;
+
+
+//==== Font-Size =====
+$font-size: ;
+
+//==== Font-Weight ====
+$font-weight: ;
+
+//==== Font-Spacing ====
+$font-spacing: ;
+
+//==== Font-Lign ====
+$font-lign: ;
+
+
+// ==== Font-Type ====
+@font-face {
+    font-family: '';
+    font-style: normal;
+    font-weight: 100;
+    src: url('') format(''), /* Modern Browsers */
+    url('')  format(''); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: '';
+    font-style: normal;
+    font-weight: 200;
+    src: url('') format(''), /* Modern Browsers */
+    url('')  format(''); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: '';
+    font-style: normal;
+    font-weight: 300;
+    src: url('') format(''), /* Modern Browsers */
+    url('')  format(''); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: '';
+    font-style: normal;
+    font-weight: 400;
+    src: url('') format(''), /* Modern Browsers */
+    url('')  format(''); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: '';
+    font-style: normal;
+    font-weight: 500;
+    src: url('') format(''), /* Modern Browsers */
+    url('')  format(''); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: '';
+    font-style: normal;
+    font-weight: 600;
+    src: url('') format(''), /* Modern Browsers */
+    url('')  format(''); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: '';
+    font-style: normal;
+    font-weight: 700;
+    src: url('') format(''), /* Modern Browsers */
+    url('')  format(''); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: '';
+    font-style: normal;
+    font-weight: 800;
+    src: url('') format(''), /* Modern Browsers */
+    url('')  format(''); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: '';
+    font-style: normal;
+    font-weight: 900;
+    src: url('') format(''), /* Modern Browsers */
+    url('')  format(''); /* Safari, Android, iOS */
+}
