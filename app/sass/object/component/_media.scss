@@ -1,51 +1,85 @@
-.c-media:before,
-.c-media:after {
-  display: table;
-  content: "";
+.c-media {
+  display: flex;
+  flex-flow: row nowrap;
 }
 
-.c-media:after {
-  clear: both;
-}
+// -----------------------------------------------------------------
+// 上下中央寄せ
+// -----------------------------------------------------------------
+// .c-media {
+//   position: relative;
+//   display: flex;
+//   flex-direction:row;
+//   flex-wrap: nowrap;
+// }
+//
+// .c-media__body {
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+// }
 
-.c-media__image {
-  float: left;
-}
+// -----------------------------------------------------------------
+// 反転
+// -----------------------------------------------------------------
 
-.c-media__image > img {
-  display: block;
-}
-
-.c-media__body {
-  overflow: hidden;
-}
+// .c-media--reverse {
+//   flex-direction:row-reverse;
+// }
 
 
-/* 反転 */
-.c-media__image--rev {
-  float: right;
-}
+// ==========================================================================
+//  ここから下はIE9以下に対応する際に使用をすることを検討
+// ==========================================================================
 
-
-
-/* 画像に対する上下中央揃い */
-.c-media2 {
-  display: table;
-}
-
-.c-media2__image {
-  display: table-cell;
-}
-
-.c-media2__image > img {
-  display: block;
-}
-
-.c-media2__body {
-  display: table-cell;
-  vertical-align: top;
-}
-
-.c-media2__body--middle {
-  vertical-align: middle;
-}
+// .c-media:before,
+// .c-media:after {
+//   display: table;
+//   content: "";
+// }
+//
+// .c-media:after {
+//   clear: both;
+// }
+//
+// .c-media__image {
+//   float: left;
+// }
+//
+// .c-media__image > img {
+//   display: block;
+// }
+//
+// .c-media__body {
+//   overflow: hidden;
+// }
+//
+//
+// /* 反転 */
+// .c-media__image--rev {
+//   float: right;
+// }
+//
+//
+//
+// /* 画像に対する上下中央揃い */
+// .c-media2 {
+//   display: table;
+// }
+//
+// .c-media2__image {
+//   display: table-cell;
+// }
+//
+// .c-media2__image > img {
+//   display: block;
+// }
+//
+// .c-media2__body {
+//   display: table-cell;
+//   vertical-align: top;
+// }
+//
+// .c-media2__body--middle {
+//   vertical-align: middle;
+// }
