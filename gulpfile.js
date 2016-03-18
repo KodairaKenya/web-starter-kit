@@ -42,7 +42,10 @@ function css() {
   .pipe($.sourcemaps.init())
   .pipe($.sass())
   .pipe($.uncss({
-      html: ['build/*.html', 'build/**/*.html']
+    html: ['build/*.html', 'build/**/*.html']
+  }))
+  .pipe($.combineMediaQueries({
+    log: true
   }))
   .pipe($.pleeease({
     autoprefixer: ['last 2 versions'],
