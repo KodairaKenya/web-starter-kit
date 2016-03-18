@@ -94,10 +94,7 @@ EditorConfigパッケージをエディタに導入することで、.editorconf
 - Internet Explorer 10 ~
 
 ## SP
-- Chrome 最新
-- Firefox 最新
-- Safari 最新
-- Internet Explorer 10 ~
+- ？
 
 
 
@@ -260,8 +257,8 @@ http://parashuto.com/rriver/development/media-queries-workflow-using-sass-and-gu
 
 
 # HTML
-## 1. 基本の書式ルール
-## 1-1. プロトコル
+## 基本の書式ルール
+## プロトコル
 ２つのプロトコル(http:/ https:)をまたがって使わざるを得ない限り、画像や他のメディアファイル、スタイルシート、スクリプトのURLからプロトコル部分を省く。
 
 
@@ -721,6 +718,187 @@ CSS設計はFLOCSSを使用する
 https://github.com/hiloki/flocss
 
 
+## BEMのセパレーター
+
+MindBEMdingを採用する
+block__element--modifier
+
+**理由：こちらの方が普及してるため
+本来のBEMよりもセパレータが識別しやすいため**
+
+
+
+## BEMの粒度
+
+block__element__element は使用しない
+blockとの関係性を明示していれば問題ない
+
+```
+/* NG */
+<ul class="navList">
+  <li class="navList__item">
+    <a class="navList__item__link" href=""></a>
+  </li>
+</ul>
+
+/* OK */
+<ul class="navList">
+  <li class="navList__item">
+    <a class="navList__link" href=""></a>
+  </li>
+</ul>
+```
+
+**理由：冗長なクラス名をさけるため**
+少し細かいBEMい話
+http://qiita.com/hiloki@github/items/4fa99b8755a22878449e
+
+
+## クラスの命名
+
+クラス名にはキャメルケースを使用し、プレフィックスとモディファイア以外でハイフンは使用しない
+
+```
+/* NG */
+.c-ghost-btn--primary
+
+/* OK */
+.c-ghostBtn--primay
+```
+
+**理由：プレフィックスとモディファイアを認識しやすくするため
+BEMを採用するとクラス名が冗長になるので少しでも短くするため**
+
+
+## マルチクラス
+コンポーネント設計のアプローチはマルチクラスを採用する
+（@extendを使用したシングルクラス設計の場合は可）
+
+**理由：CSSでで重複する記述が減らせるため
+ファイル容量が減るため
+ルールセットの再利用性があがるため
+保守性が向上するため**
+
+
+## CSSファイル
+1つのコンポーネントごとにファイルを分割する
+ファイル名はコンポーネントに使用しているクラス名を用いる
+**理由：保守性が向上するため
+
+
+## スタイルの打ち消し
+スタイルを打ち消さずにコンポーネントを定義する
+打ち消しが発生する場合、1つのルールに過剰なスタイルを追加しているので設計を見直す
+
+```
+<h1 class="headline"></h1>
+```
+
+```
+/* NG */
+.headline {
+  color: #333;
+  line-height: 1.5;
+  font-size: 2rem;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+
+.no-border {
+  padding:
+  border: none;
+}
+
+/* OK */
+.headline {
+  color: #333;
+  line-height: 1.5;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.headline--border {
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+}
+
+```
+**理由：不要なCSSを減らせるため
+
+
+
+## 絶対値
+柔軟に対応できるようにするため絶対値は原則使用しない
+
+```
+<h1 class="siteTitle"></h1>
+```
+
+```
+/* NG */
+h1 {
+  font-size: 2.4rem;
+  line-height: 32px;
+}
+
+.siteTitle {
+  font-size: 3.6rem;
+  line-height: 48px;
+}
+
+/* OK */
+h1 {
+  font-size: 2.4rem;
+  line-height: 1.333;
+}
+
+.siteTitle {
+  font-size: 2.4rem;
+}
+
+```
+**理由：不要なCSSを減らせるため
+
+
+## HTMLへの依存
+可能な限りHTMLに依存させないように定義する
+
+```
+/* NG */
+<div class="contents">
+  <div class="wrap">
+    <h2>Contents Title</h2>
+    <p>Contents の本文が入ります。</p>
+  </div>
+</div>
+
+.contents .wrap h2 {
+  font-size: 2.4rem;
+  line-height: 32px;
+}
+
+```
+
+```
+/* OK */
+<div class="contents">
+  <div class="wrap">
+    <h2 class="headline">Contents Title</h2>
+    <p>Contents の本文が入ります。</p>
+  </div>
+</div>
+
+.headline {
+  font-size: 2.4rem;
+  line-height: 32px;
+}
+
+```
+
+**理由：HTML内のタグが変更された際にCSSに影響がでないようにするため
+保守性が向上するため**
+
 
 # Git(コミットメッセージの規約)
 ## 原則
@@ -882,3 +1060,41 @@ https://gist.github.com/japboy/5402844
 Jade変換ツール
 http://jade-lang.com/
 
+
+こんなHTMLとCSSのコーディング規約で書きたい
+http://qiita.com/pugiemonn/items/964203782e1fcb3d02c3
+
+
+CSS Architecture
+http://article.enja.io/articles/css-architecture.html  
+
+Code smells in CSS
+ http://article.enja.io/articles/code-smells-in-css.html
+
+
+使いやすいWordPressのためのCSSのつくりかた 
+http://www.slideshare.net/Toro_Unit/wordpresscss  
+
+
+CSS設計の基礎を見直す
+ http://gihyo.jp/dev/serial/01/js-foundation/0009
+
+
+100年後も崩れないCSS勉強会  第1回「詳細度」
+http://pepabo.github.io/css/specificity/
+
+
+100年後も崩れないCSS勉強会  第2回「コンポーネント」
+http://pepabo.github.io/css/component/
+
+
+ [CSS] Object Oriented CSSを学んで綺麗なコードを書く
+http://www.yoheim.net/blog.php?q=20141201  
+
+
+SMACSS 読んだ
+ http://chroma.hatenablog.com/entry/2013/07/22/120818
+
+
+  BEMとは何か？
+ https://github.com/juno/bem-methodology-ja/blob/master/definitions.md
