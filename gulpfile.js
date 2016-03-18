@@ -41,6 +41,9 @@ function css() {
   .pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
   .pipe($.sourcemaps.init())
   .pipe($.sass())
+  .pipe($.uncss({
+      html: ['build/*.html', 'build/**/*.html']
+  }))
   .pipe($.pleeease({
     autoprefixer: ['last 2 versions'],
     minifier: false
