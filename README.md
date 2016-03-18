@@ -1,27 +1,32 @@
-#コーディングガイドライン
+# コーディングガイドライン
+
+[toc]
+# 始める前に
+# 準備
+# 使用方法
+# 使用ツール
+# 対応ブラウザ
+# ディレクトリ構成
+# Gulp
+# HTML
+# CSS
+# Git
+# 画像
+# 命名規則の共通ルール
+# 参考文献
 
 
-#リンク
-##1. [始める前に](#start)
-##2. [準備](#preparation)
-##3. [使用方法](#use)
-##4. [使用ツール](#tool)
-##5. [対応ブラウザ](#device)
-##6. [ディレクトリ構成](#directory)
-##7. [Gulp](#gulp)
-##8 .[HTML](#html)
-##9 .[CSS](#css)
-##10 .[Git](#git)
+<br>
 
 
-#<a name="start">始める前に</a>
+# 始める前に
 
-##対象
+## 対象
 プロジェクトに関わる人全般 <br>
 HTML / CSSの知識を持ち合わせていることを前提とする <br>
 静的なページのみのコーディングを想定とする <br>
 
-##概要
+## 概要
 1. **コードの品質の安定** <br>
   慣例・定石の例をまとめることで品質(拡張性, メンテナンス性, 可読性, バグの回避)を担保する
 2. **コミュニケーションコストの削減** <br>
@@ -29,40 +34,42 @@ HTML / CSSの知識を持ち合わせていることを前提とする <br>
 3. **経験値の共有** <br>
   HTML/CSSの仕様上起きやすいミスを防ぐ
 
-
-##ガイドライン運営ガイド
-##例外
+## ガイドライン運営ガイド
+### 例外
 極力スタイルガイドに従うが、ガイドがデメリットを生む場合に関してはガイドに従わない事をコメントに記する
-##スタイルガイドの変更
+### スタイルガイドの変更
 スタイルガイドはプロジェクトの進行、メンバーのスキル、時代の流れにより、随時変更を検討する <br>
 ただし、変更は全メンバーにその都度通達しなければならない <br>
 変更者名、変更を加える理由（現在の問題点)、変更内容を必ず表記する
 
-##余談
+## 余談
 ルールは作ることより、浸透させることのほうが難しい <br><br>
 それでも、項目一つ一つの認識を明文化することが大事であり、そのルールを守って作業を進めることは将来的な選択にも多大な幸福をもたらしてくれるはず <br><br>
 READMEはプロジェクト毎に管理をして、柔軟にルールは変更するべきである <br><br>
 
 
-#<a name="preparation">準備</a>
-##下記は準備してあるものとする
-<ul>
-  <li>node.js</li>
-  <li>git</li>
-  <li>gulp</li>
-  <li>Sass</li>
-  <li>Jade</li>
-  <li>EditorCoding</li>
-</ul>
+<br>
+
+
+# 準備
+## 下記は準備してあるものとする
+- node.js
+- git
+- gulp
+- Sass
+- Jade
+- EditorCoding
 
 **EditorConfig** <br>
-EditorConfigパッケージをエディタに導入することで、.editorconfigから共通の設定を呼び出すことができる。 <br>
+EditorConfigパッケージをエディタに導入することで、.editorconfigから共通の設定を呼び出すことができる<br>
 参考:http://ginpen.com/2014/12/14/editorconfig/ <br>
 参考:https://app.codegrid.net/entry/editorconfig <br>
 
 
+<br>
 
-#<a name="use">使用方法</a>
+
+# 使用方法
 ファイルを作業フォルダに落とす <br>
 `git clone`
 
@@ -73,45 +80,48 @@ EditorConfigパッケージをエディタに導入することで、.editorconf
 `gulp`
 
 
-
-#<a name="tool">使用ツール</a>
-<ul>
-<li>CSS Preprocessor: Sass（scss記法）</li>
-<li>Reset CSS: sanitize.css</li>
-<li>HTML Template Engind: Jade</li>
-<li>TaskRunner: Gulp</li>
-</ul>
+<br>
 
 
-#<a name="device">対応ブラウザ</a>
-##PC
-<ul>
-  <li>Chrome 最新</li>
-  <li>Firefox 最新</li>
-  <li>Safari 最新</li>
-  <li>Internet Explorer 10 ~</li>
-</ul>
-##SP
+# 使用ツール
+- CSS Preprocessor: Sass（scss記法）
+- Reset CSS: sanitize.css
+- HTML Template Engind: Jade
+- TaskRunner: Gulp
 
 
+<br>
 
-#<a name="directory">ディレクトリ構成</a>
+
+# 対応ブラウザ
+## PC
+- Chrome 最新
+- Firefox 最新
+- Safari 最新
+- Internet Explorer 10 ~
+
+## SP
+- Chrome 最新
+- Firefox 最新
+- Safari 最新
+- Internet Explorer 10 ~
+
+
+<br>
+
+
+# ディレクトリ構成
 ```
-/
+.
 ├── app
 │   ├── img
 │   │   ├── common
 │   │   └── top
 │   ├── jade
-│   │   ├── foundation
-│   │   │   ├── _base.jade
-│   │   │   └── _mixin.jade
-│   │   ├── layout
-│   │   │   ├── _footer.jade
-│   │   │   └── _header.jade
-│   │   ├── object
+│   │   ├── inc
+│   │   │   ├── _default.jade
+│   │   │   └── _ogp.jade
 │   │   └── index.jade
-│   │   └── meta.json
 │   ├── js
 │   │   ├── lib
 │   │   │   ├── jquery.js
@@ -144,9 +154,13 @@ EditorConfigパッケージをエディタに導入することで、.editorconf
 
 ```
 
-#<a name="gulp">Gulp</a>
-##環境設定
-##【Gulp4.xにする際のコマンド】
+
+<br>
+
+
+# Gulp
+## 環境設定
+### 【Gulp4.xにする際のコマンド】
 **アンインストール** <br>
 `npm uninstall -g gulp` (Macの場合は `sudo npm uninstall -g gulp` ) <br><br>
 
@@ -162,80 +176,92 @@ EditorConfigパッケージをエディタに導入することで、.editorconf
 https://speakerdeck.com/jmblog/gulp-the-good-parts
 <br><br>
 
-##プラグイン
-##gulp
+##  タスク一覧の表示
+```
+gulp --tasks
+```
+
+##  デフォルトタスクで起動
+```
+gulp
+```
+
+##  使用しているプラグイン
+### gulp
 gulpを使えるようにする(ver 4.x)<br>
 https://github.com/gulpjs/gulp/blob/4.0/docs/API.md
 
-##browser-sync
+### browser-sync
 ローカルサーバー起動 <br>
 https://www.browsersync.io/docs/gulp/
 
-##del
+### del
 ファイル削除 <br>
 https://www.npmjs.com/package/del
 
-##gulp-autoprefixer
+### gulp-autoprefixer
 cssのプレフィックスを自動付与 <br>
 https://www.npmjs.com/package/gulp-autoprefixer
 
-##gulp-changed
+### gulp-changed
 更新されたファイルのみを処理する <br>
 http://whiskers.nukos.kitchen/2014/12/13/gulp-changed.html
 
-##gulp-concat
+### gulp-concat
 指定されたファイルの結合 <br>
 https://www.npmjs.com/package/gulp-concat
 
-##gulp-imagemin
+### gulp-imagemin
 画像の圧縮 <br>
 https://www.npmjs.com/package/gulp-imagemin
 
-##gulp-jade
+### gulp-jade
 jadeのコンパイル <br>
 https://www.npmjs.com/package/gulp-jade
 
-##gulp-load-plugins
+### gulp-load-plugins
 package.jsonに記載されたgulpプラグインを一括で読み込む <<br>
 https://www.npmjs.com/package/gulp-load-plugins
 
-##gulp-notify
+### gulp-notify
 エラー発生時にデスクトップ通知を起動してくれる <br>
 http://whiskers.nukos.kitchen/2014/12/06/gulp-notify.html
 
-##gulp-size
+### gulp-size
 コマンドラインにファイルサイズを表示 <br>
 https://www.npmjs.com/package/gulp-size
 
-##gulp-pleeease
+### gulp-pleeease
 cssの最適化をいろいろ行ってくれる <br>
 http://phiary.me/gulp-pleeease/
 
-##gulp-plumber
+### gulp-plumber
 処理中にエラーが起き、タスクが強制停止することを防いでくれる <br>
 http://whiskers.nukos.kitchen/2014/12/06/gulp-notify.html
 
-##gulp-sass
+### gulp-sass
 Sassのコンパイル <br>
 https://www.npmjs.com/package/gulp-sass
 
-##gulp-sourcemap
+### gulp-sourcemap
 デバック時に変更前のファイルを保ってくれる <br>
 http://akabeko.me/blog/2014/12/browserify-2-source-map/
 
-##gulp-uglify
+### gulp-uglify
 min化 <br>
 https://www.npmjs.com/package/gulp-uglify
 
-##psi
+### psi
 ページスピードを出力 <br>
 https://github.com/addyosmani/psi
 
 
+<br>
 
-#<a name="html">HTML</a>
-##1. 基本の書式ルール
-##1-1. プロトコル
+
+# HTML
+## 1. 基本の書式ルール
+## 1-1. プロトコル
 ２つのプロトコル(http:/ https:)をまたがって使わざるを得ない限り、画像や他のメディアファイル、スタイルシート、スクリプトのURLからプロトコル部分を省く。<br>
 <br>
 
@@ -263,7 +289,7 @@ div {
 理由：ファイル容量を少なくできる<br>
 
 
-##1-2. スペース
+## スペース
 ２つのプロトコル(http:/ https:)をまたがって使わざるを得ない限り、画像や他のメディアファイル、スタイルシート、スクリプトのURLからプロトコル部分を省く。 <br>
 インデントはスペース２つ <br>
 (エディタの設定でtabでスペース2つ入力されるように設定しておく) <br>
@@ -276,17 +302,17 @@ div {
 </ul>
 ```
 
-##1-3. 文字
+## 文字
 小文字で記述する<br>
 
 
-##2. 基本のメタルール
-##2-1. エンコーディング
+## 基本のメタルール
+## エンコーディング
 `meta charset=”utf-8″`とエンコーディングを明記<br>
 <br><br>
 理由：文字エンコーディングを指定しないと、日本語で作成されたウェブページに英語版のブラウザでアクセスした場合などに文字化けが起きることがある<br>
 
-##2-2. コメント
+## コメント
 
 必要に応じてコードを説明する <br>
 コードにTODOを入れ、何のためのものか誰が入れたのかをコメントとして記述する <br>
@@ -301,18 +327,18 @@ div {
 </ul>
 ```
 
-##3. ドキュメントタイプ
-##3-1. HTML5を使う
+## ドキュメントタイプ
+## HTML5を使う
 XHTMLを使わない<br>
 
-##3-2. 正しいHTMLを使う
+## 正しいHTMLを使う
 
 悩んだらW3Cに目を通してみる <br>
 http://momdo.github.io/html5/dom.html#dom
 <br><br>
 理由：W3Cの規定に沿えば間違いない。SEOの考慮と対立した場合は、W3Cの規定を優先する
 
-##3-3. セマンティック
+## セマンティック
 
 要素の目的に沿ったHTMLを使う <br>
 header要素はheaderに、p要素は段落に、a要素はアンカーリンクに、本来の目的に沿ってHTMLを使う <br>
@@ -321,7 +347,7 @@ header要素はheaderに、p要素は段落に、a要素はアンカーリンク
 
 理由：HTMLはあくまでも"論文"と捉え、文書構造を要素で表現する<br>
 
-##3-4. 構造の分離
+## 構造の分離
 
 プレゼンテーション（スタイル）と振る舞い（スクリプト）は、ストラクチャ（マークアップ）から厳密に分ける <br>
 ３者間の相互作用は、絶対的に少なく保つように努める<br>
@@ -339,7 +365,7 @@ header要素はheaderに、p要素は段落に、a要素はアンカーリンク
 理由：メンテナンス性の向上。ファイルが分割し依存しないことで安易に修正が行える<br>
 
 
-##3-5. 文字参照
+## 文字参照
 
 「<」や「&」のようにHTMLで特別な意味を持つものや、特殊スペースのような「見えないもの」以外で文字参照を使うことを避ける<br>
 
@@ -355,7 +381,7 @@ The currency symbol for the Euro is “€”.
 http://www.marguerite.jp/Nihongo/WWW/Introduction/HTML5/Entity.html
 
 
-##3-6. マルチメディアの設定
+## マルチメディアの設定
 
 alt属性でアクシビリティー向上のために画像が何を意味しているのか記載する<br>
 
@@ -373,7 +399,7 @@ alt属性でアクシビリティー向上のために画像が何を意味し�
 http://momdo.github.io/html5/embedded-content-0.html#alt <br>
 
 
-##3-7. type属性
+## type属性
 
 CSSとJavaScriptのtype属性は省略
 <br>
@@ -390,7 +416,7 @@ CSSとJavaScriptのtype属性は省略
 理由：HTML5からtype属性は省略可能になったので、ファイル容量の削減<br>
 
 
-##3-8. aタグ
+## aタグ
 
 リンクはルート相対パスを基本とする <br>
 (注意：案件によって最適ではない場合があるので適宜変更する)<br>
@@ -403,9 +429,9 @@ CSSとJavaScriptのtype属性は省略
 <a href="/index.html"></a>
 ```
 
-##4. HTMLの書式ルール
+## HTMLの書式ルール
 
-##4-1. 一般的な書式
+## 一般的な書式
 
 それぞれのブロック/リスト/テーブル要素ごとに新しい行にし、子要素にはインデントをつける <br>
 (a、span、time、small、imgなどの最小と思われる位置に要素がくる場合は、段落をつけなくても良い)<br>
@@ -421,9 +447,9 @@ CSSとJavaScriptのtype属性は省略
 <br><br>
 理由：可読性の向上<br>
 
-##4-2. HTMLクオテーションマーク
+## HTMLクォーテーション
 
-属性値に使うクオテーションは、シングル（”）よりもダブル（””）が好ましい<br>
+属性値に使うクォーテーションは、シングル（”）よりもダブル（””）が好ましい<br>
 
 ```html
 <!-- NG -->
@@ -438,9 +464,12 @@ CSSとJavaScriptのtype属性は省略
 http://qiita.com/niusounds/items/f21a28e862a68a098ea7
 
 
-#<a name="css">CSS</a>
-##CSSスタイルルール
-##IDとclassの命名
+<br>
+
+
+# CSS
+## CSSスタイルルール
+## IDとclassの命名
 IDとクラス名にはちゃんと意味の分かる名前を使うこと。<br>
 見た目を反映したものやそれが何を表しているか不可解な名前ではなく、要素の目的や役割を反映した名前を付ける。<br>
 
@@ -464,7 +493,7 @@ IDとクラス名にはちゃんと意味の分かる名前を使うこと。<br
 理由：制作した当事者以外が把握できるようにするため、修正に耐えやすいため<br>
 （例えば緑のボタンを.btn-greenと命名した場合、後にデザインの変更があり緑から赤になると命名が適切ではないので.btn-greenを.btn-redに書き換える処理が発生する。それを最初から.btn-primaryや.btn-keyColorにすることで無駄な作業を減らすことができる）
 
-##IDとクラスの命名スタイル
+## IDとクラスの命名スタイル
 意味の分かる範囲でできるだけ短いIDとクラス名を使う。<br>
 短くしすぎて意味がわからなくなるようなのはNG。<br>
 <br>
@@ -483,14 +512,14 @@ IDとクラス名にはちゃんと意味の分かる名前を使うこと。<br
 理由：ファイルサイズ節約のため<br>
 意味が分からないほどに省略してしまっては、制作した本人しか認識できないため<br>
 
-##ID
+## ID
 IDは原則使用せずクラスで対応する<br>
 ページ内リンクで使用する場合は例外とする<br>
 <br>
 理由：再利用性が低下するため<br>
 詳細度が高くなり管理しづらいため<br>
 
-##タイプセレクタの記述
+## タイプセレクタの記述
 IDとクラス名にタイプセレクタは記述しない。<br>
 <br>
 
@@ -508,7 +537,7 @@ div.error {}
 理由：限定された要素以外に適用できなくなり、再利用性が低下するため<br>
 また、マークアップが変更になった場合、CSSに影響が出ることを避けるため<br>
 
-##ショートハンドプロパティ
+## ショートハンドプロパティ
 ショートハンドを適宜使用する<br>
 <br>
 
@@ -523,7 +552,7 @@ padding-top: 0;
 padding: 0 1em 2em;
 ```
 
-##「0」と単位
+## 「0」と単位
 値が「0」なら単位を省略する。<br>
 <br>
 
@@ -536,7 +565,7 @@ padding: 0;
 <br>
 理由：ファイルサイズ節約のため。<br>
 
-##小数点の頭の「0」
+## 小数点の頭の「0」
 小数点の頭の「0」は省略する。<br>
 <br>
 
@@ -547,15 +576,15 @@ font-size: .8em;
 <br>
 理由：ファイルサイズ節約のため。<br>
 
-##URI値の引用符
+## URI値の引用符
 url()での指定において、""（ダブルコーテーション）や''（シングルコーテーション）などのURI値の引用符を省略すること。<br>
 <br>
 
 ```css
-@import url(//www.google.com/css/go.css);
+@import url(//www.google.com/css/.css);
 ```
 
-##カラーコード
+## カラーコード
 カラーコードで3文字で表記できるものは3文字にする。<br>
 <br>
 
@@ -571,12 +600,12 @@ color: #fff;
 理由：ファイルサイズ節約のため。<br>
 
 
-##CSSハック
+## CSSハック
 ユーザーエージェント別の対応のためにCSSハックを使う前に別の方法を試してみること。<br>
 CSSハックは、ユーザーエージェントごとの違いを吸収するためには簡単で魅力的な方法だけど、プロジェクト全体のコードの品質を落とすことにもなるので「最後の手段」として考えること。<br>
 
 
-##CSS書式ルール
+## CSS書式ルール
 ブロック単位のインデント<br>
 その階層がわかるようにブロック単位でコードをインデントする。<br>
 <br>
@@ -594,7 +623,7 @@ CSSハックは、ユーザーエージェントごとの違いを吸収する�
 理由：可読性向上のため<br>
 
 
-##プロパティの終端
+## プロパティの終端
 すべてのプロパティの終端はセミコロンを書くこと。<br>
 <br>
 
@@ -616,7 +645,7 @@ CSSハックは、ユーザーエージェントごとの違いを吸収する�
 理由：可読性向上のため<br>
 
 
-##プロパティ名の終端
+## プロパティ名の終端
 すべてのプロパティ名の終端にはコロンの後にスペースを入れること。<br>
 <br>
 
@@ -635,7 +664,7 @@ h3 {
 <br>
 理由：可読性向上のため<br>
 
-##セレクタの終端
+## セレクタの終端
 
 "{"の位置は、セレクタと同じ行に記述する<br>
 セレクタとの間にはスペースをいれること<br>
@@ -662,7 +691,7 @@ h3 {
 <br>
 理由：可読性向上のため<br>
 
-##セレクタとプロパティの分離
+## セレクタとプロパティの分離
 
 別々のセレクタとプロパティは改行して書くこと。<br>
 <br>
@@ -687,7 +716,7 @@ h3 {
 理由：可読性向上のため<br>
 
 
-##CSSルールの分離
+## CSSルールの分離
 別々のCSSルールは改行して一行間を空けて書く。<br>
 <br>
 
@@ -705,7 +734,7 @@ body {
 <br>
 理由：可読性向上のため<br>
 
-##コメント
+## コメント
 
 必要に応じてコードを説明する<br>
 コードにTODOを入れ、何のためのものか誰が入れたのかをコメントとして記述する<br>
@@ -719,8 +748,8 @@ body {
 理由：当事者以外が把握しやすくするため<br>
 
 
-##CSS設計
-##下記の書籍を理解していることを前提とする
+## CSS設計
+## 下記の書籍を理解していることを前提とする
 **CSSの教科書**<br>
 http://goo.gl/MspHyM
 <br>
@@ -730,38 +759,33 @@ https://github.com/hiloki/flocss
 <br>
 
 
-#<a name="git">Git</a>
-##コミットメッセージの規約
-##原則
-<ul>
-    <li>1行目にコミットの全体的説明(タイトル)を 50 字以内で記述</li>
-    <li>2行目は空白行</li>
-    <li>3行目以降に変更内容の詳細(何をなぜ)を記述する</li>
-</ul>
+<br>
 
-##1行目の記述フォーマット
-<ul>
-    <li>Fix：バグ修正</li>
-    <li>Add：新規機能（ファイル）追加</li>
-    <li>Change：仕様変更</li>
-    <li>Remove：削除（ファイル）</li>
-</ul>
 
-###日本語の例
-<ul>
-    <li>日本語は複雑な表現が多いので、文頭に英語の表記を含める</li>
-    <li>【Fix】Aboutページのフッターリンクを修正</li>
-    <li>【Add】ユーザー数を取得する関数を追加</li>
-</ul>
+# Git
+## コミットメッセージの規約
+## 原則
+- 1行目にコミットの全体的説明(タイトル)を 50 字以内で記述
+- 2行目は空白行
+- 3行目以降に変更内容の詳細(何をなぜ)を記述する
 
-###マークアップの例
-<ul>
-    <li>【**】ページ名 / 説明 の形にする</li>
-    <li>【Fix】about / フッターリンクを修正</li>
-    <li>【Add】contact / 住所の欄を追加</li>
-</ul>
+## 1行目の記述フォーマット
+- Fix：バグ修正
+- Add：新規機能（ファイル）追加
+- Change：仕様変更
+- Remove：削除（ファイル）
 
-##.gitignore
+## #日本語の例
+- 日本語は複雑な表現が多いので、文頭に英語の表記を含める
+- 【Fix】Aboutページのフッターリンクを修正
+- 【Add】ユーザー数を取得する関数を追加
+
+## #マークアップの例
+- 【**】ページ名 / 説明 の形にする
+- 【Fix】about / フッターリンクを修正
+- 【Add】contact / 住所の欄を追加
+
+## .gitignore
 基本的にgulpで処理した後のファイルはgitで管理しない<br>
 下記のファイルはアップしないようにする<br>
 <br>
@@ -774,17 +798,21 @@ https://github.com/hiloki/flocss
 /npm-debug.log
 ```
 
-#画像
 
-##画像における命名規則は、「種類」と「詳細」をアンダーバーでつなげます　これを基本形とします
+<br>
+
+
+# 画像
+
+## 画像における命名規則は、「種類」と「詳細」をアンダーバーでつなげます　これを基本形とします
 **種類_詳細.拡張子**<br>
 <br>
 
-##デバイスごとに画像を別にする場合、デバイスを追加します
+## デバイスごとに画像を別にする場合、デバイスを追加します
 **種類_詳細_番号_デバイス.拡張子**<br>
 <br>
 
-##種類を6つに分類
+## 種類を6つに分類
 **bg: 背景**<br>
 **btn: ボタン**<br>
 **icon: アイコン**<br>
@@ -792,22 +820,22 @@ https://github.com/hiloki/flocss
 **ttl: タイトル**<br>
 **img: 画像**<br>
 
-##詳細
+## 詳細
 種類に対して詳細な説明をします<br>
 **icon_arrow.png**<br>
 <br>
 また、複数単語を使用したい場合はキャメルケースでつなげます<br>
 **icon_arrowPrev.png**<br>
 
-##番号
+## 番号
 同じ用途の画像が複数あった場合に、番号を付けてわけます<br>
 **icon_arrow_01.png**<br>
 
-##デバイス
+## デバイス
 デバイスによって画像を切り替える場合、デバイスをつけてわけます<br>
 **icon_arrow_01_pc.png**<br>
 
-##画像のパス表記
+## 画像のパス表記
 ルート相対パスを基本とする<br>
 <br>
 
@@ -825,31 +853,37 @@ https://github.com/hiloki/flocss
 （インクルードしたファイルでもルート相対パスであれば問題なく表示される）
 
 
-#命名規則の共通ルール
+<br>
+
+
+# 命名規則の共通ルール
 HTMLファイル、CSSファイル（idセレクタ/classセレクタを含む）、画像ファイル、ディレクトリ名 共通のルール<br>
 
-##英数字のみを使用する
+## 英数字のみを使用する
 理由：開く環境によっては、文字化けする可能性があるため
 
-##機種依存文字の使用禁止
+## 機種依存文字の使用禁止
 理由：記号と同様、エラーを引き起こす原因と成り得るため
 
-##必ずアルファベットからはじめ、数字からはじめてはいけない
+## 必ずアルファベットからはじめ、数字からはじめてはいけない
 理由：数字から開始しているid・class名は、認識されないため
 
-##全角スペース、半角スペース（Space）の使用禁止
+## 全角スペース、半角スペース（Space）の使用禁止
 理由：ファイル名にスペースを含んだ場合、ファイルを正常に処理出来なくなる可能性があるため<br>
 （id・class名の場合、スペースを含んでしまうと別なid・classとして認識されてしまいます。）
 
-##「\」,「/」,「:」,「?」,「<」,「>」,「|」,「＄」これらの文字の使用禁止
+## 「\」,「/」,「:」,「?」,「<」,「>」,「|」,「＄」これらの文字の使用禁止
 理由：Windowsでファイル名に使用することが出来ないため<br>
 また、上記に含まれないその他の記号についても、プログラム上で誤った処理をしてしまい、エラーを引き起こす原因と成り得る
 
-##意味が分からなくなるほどの省略は避ける
+## 意味が分からなくなるほどの省略は避ける
 理由：作成した本人しかわからない状況をさけるため
 
 
-#参考文献
+<br>
+
+
+# 参考文献
 メンテナブルCSS<br>
 https://www.cyberagent.co.jp/techinfo/techreport/report/id=7926
 <br>
@@ -885,6 +919,3 @@ https://gist.github.com/japboy/5402844
 Jade変換ツール<br>
 http://jade-lang.com/
 <br>
-
-
-
