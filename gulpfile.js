@@ -10,16 +10,17 @@ var reload      = browserSync.reload;
 
 // Source path
 var path = {
-  html     : 'app/jade/**.jade',
-  css      : 'app/**/*.scss',
-  cssLib   : 'app/lib/*.css',
-  js       : 'app/js/*.js',
-  jsLib    : 'app/js/lib/*.js',
-  img      : 'app/img/**/*.*',
-  htmlDest : 'build/',
-  cssDest  : 'build/css',
-  jsDest   : 'build/js',
-  imgDest  : 'build/img',
+  html      : 'app/jade/*.jade',
+  htmlWatch : 'app/jade/**',
+  css       : 'app/sass/**/*.scss',
+  cssLib    : 'app/sass/lib/*.css',
+  js        : 'app/js/*.js',
+  jsLib     : 'app/js/lib/*.js',
+  img       : 'app/img/**',
+  htmlDest  : 'build/',
+  cssDest   : 'build/css',
+  jsDest    : 'build/js',
+  imgDest   : 'build/img'
 };
 
 // Jade compile
@@ -132,7 +133,7 @@ function bs(cb) {
 
 // Watch
 gulp.task('watch', function(cb) {
-  gulp.watch(path.html, gulp.series(html, reload));
+  gulp.watch(path.htmlWatch, gulp.series(html, reload));
   gulp.watch(path.css, gulp.series(css, reload));
   gulp.watch(path.cssLib, gulp.series(cssLib, reload));
   gulp.watch(path.js, gulp.series(js, reload));
