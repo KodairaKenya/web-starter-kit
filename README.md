@@ -249,6 +249,7 @@ https://github.com/addyosmani/psi
 http://kc-si.info/blog/2014/10-11.html
 
 ### gulp-combine-media-queries
+注意：エラーを吐くので、一旦使用中止！！！！
 メディアクエリの記述を一箇所にまとめる
 http://parashuto.com/rriver/development/media-queries-workflow-using-sass-and-gulp
 
