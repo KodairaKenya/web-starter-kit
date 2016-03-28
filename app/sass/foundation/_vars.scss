@@ -1,17 +1,12 @@
+// ==========================================================================
+//  A、B、C、Dとアルファベット順にする
+// ==========================================================================
+
 //color
 $color-primary:;
 $color-secondary:;
 $color-link:;
 $color-default:;
-
-//width
-$width-large:;
-$width-medium:;
-$width-small:;
-
-//media
-$media-pc: 768px;
-$media-sp: 767px;
 
 //font-size
 $font-large:;
@@ -19,4 +14,14 @@ $font-medium:;
 $font-small:;
 
 //font-family
-$font-default: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "游ゴシック", YuGothic, "ＭＳ ゴシック", "メイリオ", Meiryo, sans-serif;
+$font-family-default: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "游ゴシック", YuGothic, "ＭＳ ゴシック", "メイリオ", Meiryo, sans-serif;
+
+//media-query
+$media-pc: 768px;
+$media-sp: 767px;
+
+//width
+$width-large:;
+$width-medium:;
+$width-small:;
+
