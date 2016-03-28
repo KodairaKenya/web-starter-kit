@@ -71,7 +71,7 @@ function js() {
 
 // JavaScript plugin concat
 function jsLib() {
-  return gulp.src(path.js)
+  return gulp.src(path.jsLib)
   .pipe($.concat('lib.js'))
   .pipe($.uglify())
   .pipe(gulp.dest(path.jsDest));
