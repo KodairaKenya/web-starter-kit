@@ -8,18 +8,8 @@
 .c-btn {
 	position: relative;
 	display: inline-block;
-	padding: 6px 12px;
-	font-size: 13px;
-	font-weight: bold;
-	line-height: 20px;
-	color: #333;
-	white-space: nowrap;
-	vertical-align: middle;
-	cursor: pointer;
-	background-color: #eee;
-	background-image: linear-gradient(#fcfcfc, #eee);
-	border: 1px solid #d5d5d5;
-	border-radius: 3px;
+  vertical-align: middle;
+  cursor: pointer;
 }
 
 // ==========================================================================
@@ -30,39 +20,23 @@
 // color
 // -----------------------------------------------------------------
 .c-btn--primary {
-	color: #fff;
-	text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
-	background-color: #60b044;
-	background-image: linear-gradient(#8add6d, #60b044);
-	border-color: #5ca941;
+	// ボタンの色
 	&:hover {
-		color: #fff;
-		background-color: #569e3d;
-		background-image: linear-gradient(#79d858, #569e3d);
-		border-color: #4a993e;
+		// ホバー時
 	}
 }
 
 .c-btn--danger {
-	color: #900;
+	// ボタンの色
 	&:hover {
-		color: #fff;
-    background-color: #b33630;
-    background-image: linear-gradient(#dc5f59, #b33630);
-    border-color: #cd504a;
+		// ホバー時
 	}
 }
 
 .c-btn--outline {
-  color: #4078c0;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #e5e5e5;
+  // ボタンの色
 	&:hover {
-		color: #fff;
-		background-color: #4078c0;
-		background-image: none;
-		border-color: #4078c0;
+			// ホバー時
 	}
 }
 
@@ -71,9 +45,13 @@
 // -----------------------------------------------------------------
 
 .c-btn--small {
-	padding: 3px 10px;
+	// ボタンサイズ
+}
+
+.c-btn--normal {
+	// ボタンサイズ
 }
 
 .c-btn--large {
-	padding: 15px 30px;
+	// ボタンサイズ
 }
