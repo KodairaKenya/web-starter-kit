@@ -9,12 +9,15 @@ html {
 body {
   text-align: left;
   width: 100%;
-  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "游ゴシック", YuGothic, "ＭＳ ゴシック", "メイリオ", Meiryo, sans-serif;
+  line-height: 1.7;
+  font-family: $font-default;
+  color: $color-default;
 }
 
 a {
   outline: none;
   cursor: pointer;
+  color: $color-link;
 }
 
 ul, ol, li {
