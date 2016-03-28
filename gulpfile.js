@@ -139,7 +139,8 @@ gulp.task('watch', function(cb) {
 // Default Build
 gulp.task('build', gulp.series (
   clean,
-  gulp.parallel(html, css, cssLib, js, jsLib, img /*copy*/),
+  html,
+  gulp.parallel(css, cssLib, js, jsLib, img /*copy*/),
   bs
 ));
 gulp.task(pageSpeed);
