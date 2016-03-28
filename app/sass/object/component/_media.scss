@@ -1,4 +1,5 @@
-.c-media {
+// デフォルト
+%c-media {
   display: flex;
   flex-flow: row nowrap;
 }
@@ -6,26 +7,26 @@
 // -----------------------------------------------------------------
 // 上下中央寄せ
 // -----------------------------------------------------------------
-// .c-media {
-//   position: relative;
-//   display: flex;
-//   flex-direction:row;
-//   flex-wrap: nowrap;
-// }
-//
-// .c-media__body {
-//   position: absolute;
-//   top: 50%;
-//   transform: translateY(-50%);
-// }
+%c-mediaCenter {
+  position: relative;
+  display: flex;
+  flex-direction:row;
+  flex-wrap: nowrap;
+}
+
+%c-mediaCenter__body {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
 // -----------------------------------------------------------------
 // 反転
 // -----------------------------------------------------------------
 
-// .c-media--reverse {
-//   flex-direction:row-reverse;
-// }
+%c-media--reverse {
+  flex-direction:row-reverse;
+}
 
 
 // ==========================================================================
