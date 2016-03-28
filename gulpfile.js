@@ -27,11 +27,9 @@ var path = {
 function html() {
   return gulp.src(path.html)
     .pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
-    .pipe($.sourcemaps.init())
     .pipe($.jade({
       pretty: true
     }))
-    .pipe($.sourcemaps.write('./'))
     .pipe(gulp.dest(path.htmlDest))
     .pipe($.size({title: 'jade'}));
 }
@@ -40,7 +38,6 @@ function html() {
 function css() {
   return gulp.src(path.css)
   .pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
-  .pipe($.sourcemaps.init())
   .pipe($.sass())
   .pipe($.uncss({
     html: ['build/*.html', 'build/**/*.html']
@@ -54,7 +51,6 @@ function css() {
   }))
   .pipe($.size({title: 'sass'}))
   .pipe($.concat('common.css'))
-  .pipe($.sourcemaps.write('./'))
   .pipe(gulp.dest(path.cssDest));
 }
 
@@ -70,11 +66,9 @@ function cssLib() {
 function js() {
   return gulp.src(path.js)
   .pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
-  .pipe($.sourcemaps.write())
   .pipe($.concat('common.js'))
   .pipe($.uglify())
   .pipe($.size({title: 'js'}))
-  .pipe($.sourcemaps.write('.'))
   .pipe(gulp.dest(path.jsDest));
 }
 

@@ -236,10 +236,6 @@ http://whiskers.nukos.kitchen/2014/12/06/gulp-notify.html
 Sassのコンパイル
 https://www.npmjs.com/package/gulp-sass
 
-### gulp-sourcemap
-デバック時に変更前のファイルを保ってくれる
-http://akabeko.me/blog/2014/12/browserify-2-source-map/
-
 ### gulp-uglify
 min化
 https://www.npmjs.com/package/gulp-uglify
