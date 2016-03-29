@@ -1,0 +1,101 @@
+// 参考: http://www.webcreatorbox.com/tech/flexbox/
+//      http://coliss.com/articles/build-websites/operation/css/css3-flexbox-properties-by-scotch.html
+
+// -----------------------------------------------------------------
+// レイアウト
+// -----------------------------------------------------------------
+
+// デフォルト(横)
+%c-flex {
+	display: flex;
+	flex-flow: : wrap;
+}
+
+// (縦)
+%c-flexColumn {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+// 中央寄せ
+%c-flexCenter {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+// -----------------------------------------------------------------
+// Cell
+// -----------------------------------------------------------------
+
+
+%c-flex__cell {
+	box-sizing: border-box;
+	flex-shrink: 0;
+}
+
+%c-flex__1of12 {
+	width: calc( 100% * 1 / 12 );
+}
+
+%c-flex__2of12 {
+	width: calc( 100% * 2 / 12 );
+}
+
+%c-flex__3of12 {
+	width: calc( 100% * 3 / 12 );
+}
+
+%c-flex__4of12 {
+	width: calc( 100% * 4 / 12 );
+}
+
+%c-flex__5of12 {
+	width: calc( 100% * 5 / 12 );
+}
+
+%c-flex__6of12 {
+	width: calc( 100% * 6 / 12 );
+}
+
+%c-flex__7of12 {
+	width: calc( 100% * 7 / 12 );
+}
+
+%c-flex__8of12 {
+	width: calc( 100% * 8 / 12 );
+}
+
+%c-flex__9of12 {
+	width: calc( 100% * 9 / 12 );
+}
+
+%c-flex__10of12 {
+	width: calc( 100% * 10 / 12 );
+}
+
+%c-flex__11of12 {
+	width: calc( 100% * 11 / 12 );
+}
+
+%c-flex__12of12 {
+	width: calc( 100% * 12 / 12 );
+}
+
+
+
+
+
+// ==========================================================================
+//  ここから下はIE9以下に対応する際に使用をすることを検討
+// ==========================================================================
+
+// %c-grid {
+//   font-size: 0;
+// }
+//
+// %c-grid__item {
+//   display: inline-block;
+//   vertical-align: bottom;
+// }
+
