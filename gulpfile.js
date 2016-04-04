@@ -44,7 +44,8 @@ function css() {
   }))
   .pipe($.pleeease({
     autoprefixer: ['last 2 versions'],
-    minifier: false
+    minifier: true,
+    mqpacker: true
   }))
   .pipe($.size({title: 'sass'}))
   .pipe($.concat('common.css'))
