@@ -6,7 +6,6 @@ var $           = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var del         = require('del');
 var pagespeed   = require('psi');
-var reload      = browserSync.reload;
 
 // Source path
 var path = {
@@ -31,7 +30,8 @@ function html() {
       pretty: true
     }))
     .pipe(gulp.dest(path.htmlDest))
-    .pipe($.size({title: 'jade'}));
+    .pipe($.size({title: 'jade'}))
+    .pipe(reload({stream: true}));
 }
 
 // Sass compile
@@ -48,7 +48,8 @@ function css() {
   }))
   .pipe($.size({title: 'sass'}))
   .pipe($.concat('common.css'))
-  .pipe(gulp.dest(path.cssDest));
+  .pipe(gulp.dest(path.cssDest))
+  .pipe(reload({stream: true}));
 }
 
 // CSS Plugin concat
@@ -56,7 +57,9 @@ function cssLib() {
   return gulp.src(path.cssLib)
   .pipe($.plumber())
   .pipe($.concat('lib.css'))
-  .pipe(gulp.dest(path.cssDest));
+  .pipe(gulp.dest(path.cssDest))
+  .pipe(reload({stream: true}))
+  .pipe(reload({stream: true}));
 }
 
 // JavaScript optimaize
@@ -66,7 +69,8 @@ function js() {
   .pipe($.concat('common.js'))
   .pipe($.uglify())
   .pipe($.size({title: 'js'}))
-  .pipe(gulp.dest(path.jsDest));
+  .pipe(gulp.dest(path.jsDest))
+  .pipe(reload({stream: true}));
 }
 
 // JavaScript plugin concat
@@ -74,7 +78,8 @@ function jsLib() {
   return gulp.src(path.jsLib)
   .pipe($.concat('lib.js'))
   .pipe($.uglify())
-  .pipe(gulp.dest(path.jsDest));
+  .pipe(gulp.dest(path.jsDest))
+  .pipe(reload({stream: true}));
 }
 
 // Image optimize
@@ -85,7 +90,8 @@ function img() {
     interlaced: true
   }))
   .pipe(gulp.dest(path.imgDest))
-  .pipe($.size({title: 'img'}));
+  .pipe($.size({title: 'img'}))
+  .pipe(reload({stream: true}));
 }
 
 // //  Copy files
@@ -123,14 +129,14 @@ function bs(cb) {
 }
 
 // Watch
-gulp.task('watch', function(cb) {
-  gulp.watch(path.htmlWatch, gulp.series(html, reload));
-  gulp.watch(path.css, gulp.series(css, reload));
-  gulp.watch(path.cssLib, gulp.series(cssLib, reload));
-  gulp.watch(path.js, gulp.series(js, reload));
-  gulp.watch(path.jsLib, gulp.series(jsLib, reload));
-  gulp.watch(path.img, gulp.series(img, reload));
-  cb();
+gulp.task('watch', function(done) {
+  gulp.watch(path.htmlWatch, gulp.series(html));
+  gulp.watch(path.css, gulp.series(css));
+  gulp.watch(path.cssLib, gulp.series(cssLib));
+  gulp.watch(path.js, gulp.series(js));
+  gulp.watch(path.jsLib, gulp.series(jsLib));
+  gulp.watch(path.img, gulp.series(img));
+  done();
 });
 
 // Default Build
