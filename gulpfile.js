@@ -40,7 +40,8 @@ function css() {
   .pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
   .pipe($.sass())
   .pipe($.uncss({
-    html: ['build/*.html', 'build/**/*.html']
+    html: ['build/*.html', 'build/**/*.html'],
+    ignore: [/^\.is-/, ]
   }))
   .pipe($.pleeease({
     autoprefixer: ['last 2 versions'],
